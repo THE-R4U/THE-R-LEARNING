@@ -1,0 +1,75 @@
+---
+title: "learnr 패키지 사용법"
+output: learnr::tutorial
+runtime: shiny_prerendered
+---
+
+```{r setup, include=FALSE}
+library(learnr)
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+
+## R/RStudio 설치 
+
+### 연습문제 
+
+*대답을 입력하기 위해 제공되는 빈 코드 청크가있는 간단한 연습이 있습니다.*
+
+두 개 더하기 두 개를 더하기 위해 필요한 R 코드를 작성하십시오.:
+
+```{r two-plus-two, exercise=TRUE}
+
+```
+
+### 직접 코딩하여 연습하기
+
+*미리 채워진 약간의 코드와 'exercise.lines = 5'를 사용하여 좀 더 초기 작업 공간을 제공하는 연습이 있습니다.*
+
+이제 두 개의 숫자를 추가 한 다음 호출하는 함수를 작성하십시오:
+
+```{r add-function, exercise=TRUE, exercise.lines = 5}
+add <- function() {
+  
+}
+```
+
+## 두번째 주제
+
+### 힌트가 있는 연습문제
+
+*다음은 청크가`exercise.eval` 옵션을 통해 사전에 제거되는 연습입니다 (사용자가 사용자 정의 할 기본 출력을 볼 수 있도록). 올바른 해결책에`print-limit-hint` 라벨 바로 아래의 청크를 통해 "힌트"를 추가합니다..*
+
+인쇄 할 행 수를 5로 제한하려면 다음 코드를 수정하십시오.:
+
+```{r print-limit, exercise=TRUE, exercise.eval=TRUE}
+mtcars
+```
+
+```{r print-limit-hint}
+head(mtcars)
+```
+
+### 연습문제
+
+*원하는 수의 단일 또는 객관식 질문을 퀴즈로 포함 할 수 있습니다. `question` 함수를 사용하여 질문을 정의하고`quiz` 함수를 사용하여 여러 질문을 하나로 묶습니다.*
+
+다양한 기본 패키지와 권장 R 패키지의 목적을 이해하는지 확인하기위한 몇 가지 질문:
+
+```{r quiz}
+quiz(
+  question("어떤 패키지에 다른 R 패키지를 설치하는 기능이 있습니까?",
+    answer("base"),
+    answer("tools"),
+    answer("utils", correct = TRUE),
+    answer("codetools")
+  ),
+  question("아래에 나열된 R 패키지 중 어느 것을 사용하여 플롯을 생성합니까?",
+    answer("lattice", correct = TRUE),
+    answer("tools"),
+    answer("stats"),
+    answer("grid", correct = TRUE)
+  )
+)
+```
+
